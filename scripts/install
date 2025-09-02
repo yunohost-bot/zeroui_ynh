@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source _common.sh
+
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -15,7 +15,7 @@ yunohost app list | grep -q "id: zerotier" || ynh_die "ZeroTier is needed, but i
 #=================================================
 ynh_script_progression "Installing dependencies..."
 
-ynh_nodejs_install
+#REMOVEME? ynh_nodejs_install
 ynh_hide_warnings corepack enable && corepack prepare pnpm@latest --activate
 
 #=================================================

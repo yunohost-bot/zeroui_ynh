@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source _common.sh
+
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -27,7 +27,7 @@ ynh_systemctl --service=$app --action="stop" --log_path="systemd"
 #=================================================
 ynh_script_progression "Installing dependencies..."
 
-ynh_nodejs_install
+#REMOVEME? ynh_nodejs_install
 ynh_hide_warnings corepack enable && corepack prepare pnpm@latest --activate
 
 # Prevent ERR_OSSL_EVP_UNSUPPORTED error
